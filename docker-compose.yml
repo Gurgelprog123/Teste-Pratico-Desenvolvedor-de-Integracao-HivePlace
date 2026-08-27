@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+
+    container_name: pncp-app
+
+    environment:
+      PNCP_HEADLESS: "true"
+      PNCP_MAX_RECORDS: "100"
+      PNCP_MAX_PAGES: "25"
+      PNCP_REQUEST_INTERVAL: "1.0"
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
